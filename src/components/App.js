@@ -13,11 +13,11 @@ const App = () => {
 		<div className="ui container">
 			<Router>
 				<Header />
-				<Route exact path="/" component={StreamList}></Route>
-				<Route path="/streams/new" component={StreamCreate}></Route>
-				<Route path="/streams/edit" component={StreamEdit}></Route>
-				<Route path="/streams/delete" component={StreamDelete}></Route>
-				<Route path="/streams/show" component={StreamShow}></Route>
+				<Route path="/" exact component={StreamList}></Route>
+				<Route path="/streams/new" exact component={StreamCreate}></Route>
+				<Route path="/streams/edit" exact component={StreamEdit}></Route>
+				<Route path="/streams/delete" exact component={StreamDelete}></Route>
+				<Route path="/streams/show" exact component={StreamShow}></Route>
 			</Router>
 		</div>
 	);
