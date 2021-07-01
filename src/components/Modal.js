@@ -1,23 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import history from "../history";
 
-const Modal = (props) => {
+const Modal = ({ title, content, actions, onDismiss }) => {
 	return ReactDOM.createPortal(
-		<div
-			onClick={() => history.push("/")}
-			className="ui dimmer modals visible active">
+		<div onClick={onDismiss} className="ui dimmer modals visible active">
 			<div
 				onClick={(e) => e.stopPropagation()}
 				className="ui standard modal visible active">
-				<div className="header">Delete Stream</div>
-				<div className="content">Are you sure you want to delete stream?</div>
-				<div className="actions">
-					<button className="ui primary button">Delete</button>
-					<button onClick={() => history.push("/")} className="ui button">
-						Cancel
-					</button>
-				</div>
+				<div className="header">{title}</div>
+				<div className="content">{content}</div>
+				<div className="actions">{actions}</div>
 			</div>
 		</div>,
 		document.querySelector("#modal")
